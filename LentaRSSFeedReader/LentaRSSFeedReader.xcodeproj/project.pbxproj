@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		89651FAB29899484006F3CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FAA29899484006F3CB7 /* AppDelegate.swift */; };
-		89651FAD29899484006F3CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FAC29899484006F3CB7 /* SceneDelegate.swift */; };
-		89651FAF29899484006F3CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FAE29899484006F3CB7 /* ViewController.swift */; };
-		89651FB229899484006F3CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89651FB029899484006F3CB7 /* Main.storyboard */; };
 		89651FB529899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89651FB329899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld */; };
 		89651FB729899486006F3CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89651FB629899486006F3CB7 /* Assets.xcassets */; };
 		89651FBA29899486006F3CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89651FB829899486006F3CB7 /* LaunchScreen.storyboard */; };
+		89651FC42989A63C006F3CB7 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FC32989A63C006F3CB7 /* NewsFeedViewController.swift */; };
+		89651FC72989A68C006F3CB7 /* CustomRSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FC62989A68C006F3CB7 /* CustomRSSParser.swift */; };
+		89651FCB2989A753006F3CB7 /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FCA2989A753006F3CB7 /* Contents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89651FA729899484006F3CB7 /* LentaRSSFeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LentaRSSFeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89651FAA29899484006F3CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89651FAC29899484006F3CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89651FAE29899484006F3CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		89651FB129899484006F3CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89651FB429899484006F3CB7 /* LentaRSSFeedReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LentaRSSFeedReader.xcdatamodel; sourceTree = "<group>"; };
 		89651FB629899486006F3CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89651FB929899486006F3CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89651FBB29899486006F3CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89651FC32989A63C006F3CB7 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		89651FC62989A68C006F3CB7 /* CustomRSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRSSParser.swift; sourceTree = "<group>"; };
+		89651FCA2989A753006F3CB7 /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +58,56 @@
 		89651FA929899484006F3CB7 /* LentaRSSFeedReader */ = {
 			isa = PBXGroup;
 			children = (
+				89651FC82989A6E9006F3CB7 /* ContentTemplates */,
+				89651FC92989A6F0006F3CB7 /* CoreData */,
+				89651FC52989A67E006F3CB7 /* NetworkTools */,
+				89651FC12989A604006F3CB7 /* NewsFeedViewController */,
+				89651FC22989A612006F3CB7 /* NewsArticleViewController */,
 				89651FAA29899484006F3CB7 /* AppDelegate.swift */,
-				89651FAC29899484006F3CB7 /* SceneDelegate.swift */,
-				89651FAE29899484006F3CB7 /* ViewController.swift */,
-				89651FB029899484006F3CB7 /* Main.storyboard */,
 				89651FB629899486006F3CB7 /* Assets.xcassets */,
 				89651FB829899486006F3CB7 /* LaunchScreen.storyboard */,
 				89651FBB29899486006F3CB7 /* Info.plist */,
-				89651FB329899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld */,
 			);
 			path = LentaRSSFeedReader;
+			sourceTree = "<group>";
+		};
+		89651FC12989A604006F3CB7 /* NewsFeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				89651FC32989A63C006F3CB7 /* NewsFeedViewController.swift */,
+			);
+			path = NewsFeedViewController;
+			sourceTree = "<group>";
+		};
+		89651FC22989A612006F3CB7 /* NewsArticleViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsArticleViewController;
+			sourceTree = "<group>";
+		};
+		89651FC52989A67E006F3CB7 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				89651FC62989A68C006F3CB7 /* CustomRSSParser.swift */,
+			);
+			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		89651FC82989A6E9006F3CB7 /* ContentTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				89651FCA2989A753006F3CB7 /* Contents.swift */,
+			);
+			path = ContentTemplates;
+			sourceTree = "<group>";
+		};
+		89651FC92989A6F0006F3CB7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				89651FB329899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +170,6 @@
 			files = (
 				89651FBA29899486006F3CB7 /* LaunchScreen.storyboard in Resources */,
 				89651FB729899486006F3CB7 /* Assets.xcassets in Resources */,
-				89651FB229899484006F3CB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89651FAF29899484006F3CB7 /* ViewController.swift in Sources */,
+				89651FC72989A68C006F3CB7 /* CustomRSSParser.swift in Sources */,
+				89651FCB2989A753006F3CB7 /* Contents.swift in Sources */,
 				89651FAB29899484006F3CB7 /* AppDelegate.swift in Sources */,
 				89651FB529899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld in Sources */,
-				89651FAD29899484006F3CB7 /* SceneDelegate.swift in Sources */,
+				89651FC42989A63C006F3CB7 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		89651FB029899484006F3CB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89651FB129899484006F3CB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		89651FB829899486006F3CB7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,21 +326,25 @@
 				DEVELOPMENT_TEAM = 97L2996NM5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LentaRSSFeedReader/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LentaRSSFeedReader;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-21.LentaRSSFeedReader";
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapp.LentaRSSFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,21 +358,25 @@
 				DEVELOPMENT_TEAM = 97L2996NM5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LentaRSSFeedReader/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LentaRSSFeedReader;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-21.LentaRSSFeedReader";
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapp.LentaRSSFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
