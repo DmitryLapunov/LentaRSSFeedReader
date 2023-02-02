@@ -15,9 +15,11 @@ enum Constants {
     }
     
     enum NewsCell {
-        static let cornerRadius: CGFloat = 4
+        static let largeRadius: CGFloat = 8
+        static let smallRadius: CGFloat = 4
         static let imageWidth: CGFloat = 90
         static let imageHeight: CGFloat = 60
+        static let isReadSize: CGFloat = 16
     }
     
     enum Constraints {

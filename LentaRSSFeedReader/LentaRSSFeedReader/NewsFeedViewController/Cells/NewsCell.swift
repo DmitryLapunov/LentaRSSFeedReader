@@ -20,7 +20,17 @@ final class NewsCell: UITableViewCell {
     private lazy var newsImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = Colors.darkGray
-        imageView.layer.cornerRadius = Constants.NewsCell.cornerRadius
+        imageView.layer.cornerRadius = Constants.NewsCell.smallRadius
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var isReadImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = Colors.white
+        imageView.layer.cornerRadius = Constants.NewsCell.largeRadius
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +73,7 @@ final class NewsCell: UITableViewCell {
     
     private func setupSubviews() {
         contentView.addSubview(newsImageView)
+        contentView.addSubview(isReadImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(dateLabel)
     }
@@ -76,6 +87,12 @@ final class NewsCell: UITableViewCell {
                                               constant: Constants.Constraints.basicNegative).isActive = true
         newsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                                constant: Constants.Constraints.basicPositive).isActive = true
+        
+        isReadImageView.widthAnchor.constraint(equalToConstant: Constants.NewsCell.isReadSize).isActive = true
+        isReadImageView.heightAnchor.constraint(equalToConstant: Constants.NewsCell.isReadSize).isActive = true
+        isReadImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        isReadImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                 constant: Constants.Constraints.halfPositive).isActive = true
         
         titleLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor,
                                             constant: Constants.Constraints.halfPositive).isActive = true
@@ -91,6 +108,8 @@ final class NewsCell: UITableViewCell {
     func setupCell(news: NewsCellStructure) {
         newsImageView.kf.setImage(with: URL(string: news.imageLink),
                                   placeholder: Images.System.placeholder)
+        isReadImageView.image = news.isRead == false ? Images.System.exclamationmark : Images.System.checkmark
+        isReadImageView.tintColor = news.isRead == false ? Colors.crimsonRed : Colors.lightGray
         titleLabel.text = news.title
         dateLabel.text = CustomDateFormatter.formatDate(unformattedDate: news.date)
     }

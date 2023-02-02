@@ -14,5 +14,7 @@ enum Images {
     
     enum System {
         static let placeholder = UIImage(systemName: "photo")
+        static let exclamationmark = UIImage(systemName: "exclamationmark.circle.fill")
+        static let checkmark = UIImage(systemName: "checkmark.circle.fill")
     }
 }

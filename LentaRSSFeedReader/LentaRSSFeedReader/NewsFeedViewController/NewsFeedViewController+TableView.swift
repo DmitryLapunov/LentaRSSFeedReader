@@ -22,6 +22,7 @@ extension NewsFeedViewController: UITableViewDataSource {
 
 extension NewsFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        arrayOfNews[indexPath.row].isRead = true
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
