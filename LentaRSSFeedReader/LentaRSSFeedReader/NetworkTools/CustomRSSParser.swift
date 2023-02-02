@@ -7,19 +7,29 @@
 
 import Foundation
 
-final class CustomRSSParser: NSObject {
+typealias RSSFeedHandler = (Result<[[String]], Error>) -> Void
+
+protocol CustomRSSParserProtocol: AnyObject {
+    func startXMLParsing(url: URL, completion: @escaping RSSFeedHandler)
+}
+
+final class CustomRSSParser: NSObject, CustomRSSParserProtocol {
     var parser = XMLParser()
     var singleItem: [String] = []
     var arrayOfItems: [[String]] = []
     var currentElementName: String = ""
     var content: String = ""
     
-    func startXMLParsing(url: URL, completion: @escaping ([[String]]) -> ()) {
+    func startXMLParsing(url: URL, completion: @escaping RSSFeedHandler) {
         DispatchQueue.global().async {
             self.parser = XMLParser(contentsOf: url) ?? XMLParser()
             self.parser.delegate = self
-            self.parser.parse()
-            completion(self.arrayOfItems)
+            if self.parser.parse() == true {
+                completion(.success(self.arrayOfItems))
+            } else {
+                let error = CustomError(string: "Не удалось получить доступ к ленте RSS.") as Error
+                completion(.failure(error))
+            }
         }
     }
 }
