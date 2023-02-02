@@ -15,13 +15,13 @@ final class NewsFeedView: UIView {
         let tableView = UITableView()
         tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseIdentifier)
         tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = Colors.clear
         tableView.separatorStyle = .singleLine
-        tableView.separatorInset = UIEdgeInsets(top: 0,
-                                                left: 114,
-                                                bottom: 0,
-                                                right: 0)
-        tableView.rowHeight = 92
+        tableView.separatorInset = UIEdgeInsets(top: Constants.NewsFeedView.separatorZeroInset,
+                                                left: Constants.NewsFeedView.separatorLeading,
+                                                bottom: Constants.NewsFeedView.separatorZeroInset,
+                                                right: Constants.NewsFeedView.separatorZeroInset)
+        tableView.rowHeight = Constants.NewsFeedView.rowHeight
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -30,7 +30,7 @@ final class NewsFeedView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = Colors.white
         setupSubviews()
         setConstraints()
     }

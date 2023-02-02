@@ -27,7 +27,7 @@ final class CustomRSSParser: NSObject, CustomRSSParserProtocol {
             if self.parser.parse() == true {
                 completion(.success(self.arrayOfItems))
             } else {
-                let error = CustomError(string: "Не удалось получить доступ к ленте RSS.") as Error
+                let error = CustomError(string: Contents.Networking.parsingError) as Error
                 completion(.failure(error))
             }
         }

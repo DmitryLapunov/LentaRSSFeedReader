@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class NewsCell: UITableViewCell {
     
@@ -18,8 +19,9 @@ final class NewsCell: UITableViewCell {
     
     private lazy var newsImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = .black
-        imageView.image = UIImage(systemName: "photo")
+        imageView.tintColor = Colors.darkGray
+        imageView.layer.cornerRadius = Constants.NewsCell.cornerRadius
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -27,18 +29,18 @@ final class NewsCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .black
-        label.numberOfLines = 3
+        label.font = Fonts.NewsFeed.newsTitle
+        label.textColor = Colors.darkGray
+        label.numberOfLines = Constants.Label.threeLines
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
-        label.textColor = .systemGray
-        label.numberOfLines = 1
+        label.font = Fonts.NewsFeed.newsDate
+        label.textColor = Colors.lightGray
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +50,7 @@ final class NewsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
-        backgroundColor = .clear
+        backgroundColor = Colors.clear
         setupSubviews()
         setConstraints()
     }
@@ -66,27 +68,29 @@ final class NewsCell: UITableViewCell {
     }
     
     private func setConstraints() {
-        newsImageView.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        newsImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        newsImageView.widthAnchor.constraint(equalToConstant: Constants.NewsCell.imageWidth).isActive = true
+        newsImageView.heightAnchor.constraint(equalToConstant: Constants.NewsCell.imageHeight).isActive = true
         newsImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                           constant: 16).isActive = true
+                                           constant: Constants.Constraints.basicPositive).isActive = true
         newsImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                              constant: -16).isActive = true
+                                              constant: Constants.Constraints.basicNegative).isActive = true
         newsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                               constant: 16).isActive = true
+                                               constant: Constants.Constraints.basicPositive).isActive = true
         
         titleLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor,
-                                            constant: 8).isActive = true
+                                            constant: Constants.Constraints.halfPositive).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                             constant: -16).isActive = true
+                                             constant: Constants.Constraints.basicNegative).isActive = true
         titleLabel.topAnchor.constraint(equalTo: newsImageView.topAnchor).isActive = true
         
         dateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                       constant: 4).isActive = true
+                                       constant: Constants.Constraints.quarterPositive).isActive = true
     }
     
     func setupCell(news: NewsCellStructure) {
+        newsImageView.kf.setImage(with: URL(string: news.imageLink),
+                                  placeholder: Images.System.placeholder)
         titleLabel.text = news.title
         dateLabel.text = CustomDateFormatter.formatDate(unformattedDate: news.date)
     }

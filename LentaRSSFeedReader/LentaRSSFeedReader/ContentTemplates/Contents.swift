@@ -17,5 +17,6 @@ enum Contents {
         static let elementCategory = "category"
         static let elementEnclosure = "enclosure"
         static let inlineKeyUrl = "url"
+        static let parsingError = "Не удалось получить доступ к ленте RSS."
     }
 }
