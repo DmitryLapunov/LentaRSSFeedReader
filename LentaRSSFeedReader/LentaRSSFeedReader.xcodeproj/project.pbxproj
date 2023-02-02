@@ -24,9 +24,12 @@
 		89651FDC298C20F1006F3CB7 /* NewsFeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FDB298C20F1006F3CB7 /* NewsFeedRepository.swift */; };
 		89651FDF298C2565006F3CB7 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FDE298C2565006F3CB7 /* CustomError.swift */; };
 		89651FE1298C3886006F3CB7 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FE0298C3886006F3CB7 /* CustomDateFormatter.swift */; };
+		DD4FC718A3DC659489EF069E /* Pods_LentaRSSFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1A5E6E42669D340098D5D9 /* Pods-LentaRSSFeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LentaRSSFeedReader.debug.xcconfig"; path = "Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader.debug.xcconfig"; sourceTree = "<group>"; };
+		7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LentaRSSFeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89651FA729899484006F3CB7 /* LentaRSSFeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LentaRSSFeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89651FAA29899484006F3CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89651FB429899484006F3CB7 /* LentaRSSFeedReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LentaRSSFeedReader.xcdatamodel; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		89651FDB298C20F1006F3CB7 /* NewsFeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedRepository.swift; sourceTree = "<group>"; };
 		89651FDE298C2565006F3CB7 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		89651FE0298C3886006F3CB7 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LentaRSSFeedReader.release.xcconfig"; path = "Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4FC718A3DC659489EF069E /* Pods_LentaRSSFeedReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,8 @@
 			children = (
 				89651FA929899484006F3CB7 /* LentaRSSFeedReader */,
 				89651FA829899484006F3CB7 /* Products */,
+				FBEE34F4E68E97670B5C6684 /* Pods */,
+				A5B6C9E824BCB9603ABF4AE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +163,24 @@
 			path = CustomTools;
 			sourceTree = "<group>";
 		};
+		A5B6C9E824BCB9603ABF4AE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBEE34F4E68E97670B5C6684 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C1A5E6E42669D340098D5D9 /* Pods-LentaRSSFeedReader.debug.xcconfig */,
+				8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89651FBE29899486006F3CB7 /* Build configuration list for PBXNativeTarget "LentaRSSFeedReader" */;
 			buildPhases = (
+				346122B42EC575EC1CAD7F1F /* [CP] Check Pods Manifest.lock */,
 				89651FA329899484006F3CB7 /* Sources */,
 				89651FA429899484006F3CB7 /* Frameworks */,
 				89651FA529899484006F3CB7 /* Resources */,
+				7B6ECD92EA1CD2A88BB99F8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +247,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		346122B42EC575EC1CAD7F1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LentaRSSFeedReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B6ECD92EA1CD2A88BB99F8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89651FA329899484006F3CB7 /* Sources */ = {
@@ -374,6 +443,7 @@
 		};
 		89651FBF29899486006F3CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1A5E6E42669D340098D5D9 /* Pods-LentaRSSFeedReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +476,7 @@
 		};
 		89651FC029899486006F3CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
