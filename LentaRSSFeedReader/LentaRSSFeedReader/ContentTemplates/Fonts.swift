@@ -12,4 +12,10 @@ enum Fonts {
         static let newsTitle = UIFont(name: LatoFont.regular, size: 14)
         static let newsDate = UIFont(name: LatoFont.light, size: 10)
     }
+    
+    enum NewsArticle {
+        static let newsTitle = UIFont(name: LatoFont.bold, size: 18)
+        static let newsDate = UIFont(name: LatoFont.light, size: 14)
+        static let newsArticle = UIFont(name: LatoFont.regular, size: 14)
+    }
 }

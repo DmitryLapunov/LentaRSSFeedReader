@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лапунов on 3.02.23.
 //
 
-import Foundation
+import UIKit
 
 enum Constants {
     enum NewsFeedView {
@@ -22,10 +22,17 @@ enum Constants {
         static let isReadSize: CGFloat = 16
     }
     
+    enum NewsArticle {
+        static let imageRadius: CGFloat = 6
+        static let imageWidth: CGFloat = UIScreen.main.bounds.width - 32
+        static let imageHeight: CGFloat = imageWidth / 1.5
+    }
+    
     enum Constraints {
         static let basicPositive: CGFloat = 16
         static let basicNegative: CGFloat = -16
         static let halfPositive: CGFloat = 8
+        static let halfNegative: CGFloat = -8
         static let quarterPositive: CGFloat = 4
     }
     
@@ -33,5 +40,9 @@ enum Constants {
         static let infiniteLines = 0
         static let singleLine = 1
         static let threeLines = 3
+    }
+    
+    enum StackView {
+        static let zeroSpacing: CGFloat = 0
     }
 }

@@ -38,6 +38,11 @@ extension NewsFeedViewController: NewsFeedViewProtocol {
     }
     
     func presentArticleData(articleStructure: NewsArticleStructure) {
+        DispatchQueue.main.async {
+            let newsArticleBuilder = NewsArticleBuilder()
+            let newsArticleViewController = newsArticleBuilder.build(articleStructure: articleStructure)
+            self.navigationController?.pushViewController(newsArticleViewController, animated: true)
+        }
     }
     
     func handleTableViewInteraction(isEnabled: Bool) {

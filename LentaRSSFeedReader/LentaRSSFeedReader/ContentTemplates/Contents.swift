@@ -23,4 +23,8 @@ enum Contents {
         static let tagAttribute = "class"
         static let attributeValue = "topic-body__content-text"
     }
+    
+    enum Basic {
+        static let paragraphSeparator = "\n\n"
+    }
 }
