@@ -27,4 +27,10 @@ enum Contents {
     enum Basic {
         static let paragraphSeparator = "\n"
     }
+    
+    enum CoreData {
+        static let persistentContainer = "LentaRSSFeedReader"
+        static let invalidManagedObjectType = "Неправильный тип объекта для кэширования."
+        static let unableToClearCache = "Невозможно удалить кэш приложения."
+    }
 }
