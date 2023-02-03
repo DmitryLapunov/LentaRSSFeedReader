@@ -33,6 +33,7 @@
 		89651FF0298C6E9E006F3CB7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FEF298C6E9E006F3CB7 /* Images.swift */; };
 		89651FF2298C6F40006F3CB7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF1298C6F40006F3CB7 /* Colors.swift */; };
 		89651FF4298C700B006F3CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF3298C700B006F3CB7 /* Constants.swift */; };
+		89651FF6298C9931006F3CB7 /* NewsFeedViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF5298C9931006F3CB7 /* NewsFeedViewDelegate.swift */; };
 		DD4FC718A3DC659489EF069E /* Pods_LentaRSSFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		89651FEF298C6E9E006F3CB7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		89651FF1298C6F40006F3CB7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		89651FF3298C700B006F3CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89651FF5298C9931006F3CB7 /* NewsFeedViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewDelegate.swift; sourceTree = "<group>"; };
 		8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LentaRSSFeedReader.release.xcconfig"; path = "Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				89651FD5298C1EDF006F3CB7 /* NewsFeedViewController+Extension.swift */,
 				89651FD3298B3F78006F3CB7 /* NewsFeedViewController+TableView.swift */,
 				89651FCE298B3D11006F3CB7 /* NewsFeedView.swift */,
+				89651FF5298C9931006F3CB7 /* NewsFeedViewDelegate.swift */,
 				89651FD7298C1F18006F3CB7 /* NewsFeedPresenter.swift */,
 				89651FD9298C1F25006F3CB7 /* NewsFeedBuilder.swift */,
 				89651FD0298B3D7A006F3CB7 /* Cells */,
@@ -348,6 +351,7 @@
 				89651FF0298C6E9E006F3CB7 /* Images.swift in Sources */,
 				89651FB529899484006F3CB7 /* LentaRSSFeedReader.xcdatamodeld in Sources */,
 				89651FD6298C1EDF006F3CB7 /* NewsFeedViewController+Extension.swift in Sources */,
+				89651FF6298C9931006F3CB7 /* NewsFeedViewDelegate.swift in Sources */,
 				89651FD2298B3D9A006F3CB7 /* NewsCell.swift in Sources */,
 				89651FD8298C1F18006F3CB7 /* NewsFeedPresenter.swift in Sources */,
 				89651FE3298C6949006F3CB7 /* NavBarFormatter.swift in Sources */,

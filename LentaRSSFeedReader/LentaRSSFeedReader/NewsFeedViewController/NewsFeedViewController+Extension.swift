@@ -9,13 +9,29 @@ import Foundation
 
 protocol NewsFeedViewProtocol: AnyObject {
     func presentNewsData(news: [NewsCellStructure])
+    func stopRefreshing()
 }
 
 extension NewsFeedViewController: NewsFeedViewProtocol {
     func presentNewsData(news: [NewsCellStructure]) {
-        self.arrayOfNews = news
+        var parsedNews = news
+        if self.arrayOfNews.count > 0 {
+            for newsItem in parsedNews where self.arrayOfNews.filter({ $0.title == newsItem.title && $0.isRead != newsItem.isRead }).count > 0 {
+                let index = parsedNews.firstIndex { news in
+                    news.title == newsItem.title
+                }
+                parsedNews[index ?? 0].isRead.toggle()
+            }
+            self.arrayOfNews = parsedNews
+        } else {
+            self.arrayOfNews = news
+        }
         DispatchQueue.main.async {
             self.controllerView.tableView.reloadData()
         }
+    }
+    
+    func stopRefreshing() {
+        controllerView.stopRefreshing()
     }
 }

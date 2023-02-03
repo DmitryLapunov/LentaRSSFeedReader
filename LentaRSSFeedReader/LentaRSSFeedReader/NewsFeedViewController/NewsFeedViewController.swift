@@ -43,5 +43,6 @@ final class NewsFeedViewController: UIViewController {
     private func setupView() {
         controllerView.tableView.dataSource = self
         controllerView.tableView.delegate = self
+        controllerView.newsFeedViewDelegate = self
     }
 }

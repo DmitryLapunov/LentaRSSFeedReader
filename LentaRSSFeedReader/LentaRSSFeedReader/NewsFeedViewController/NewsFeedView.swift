@@ -9,7 +9,18 @@ import UIKit
 
 final class NewsFeedView: UIView {
     
+    //MARK: - Class properties
+    
+    weak var newsFeedViewDelegate: NewsFeedViewDelegate?
+    
     // MARK: - UI elements
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        control.tintColor = Colors.lightGray
+        return control
+    }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,6 +33,7 @@ final class NewsFeedView: UIView {
                                                 bottom: Constants.NewsFeedView.separatorZeroInset,
                                                 right: Constants.NewsFeedView.separatorZeroInset)
         tableView.rowHeight = Constants.NewsFeedView.rowHeight
+        tableView.refreshControl = refreshControl
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -50,5 +62,13 @@ final class NewsFeedView: UIView {
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
+    
+    @objc private func refreshTableView() {
+        newsFeedViewDelegate?.refreshNewsData()
+    }
+    
+    func stopRefreshing() {
+        refreshControl.endRefreshing()
     }
 }

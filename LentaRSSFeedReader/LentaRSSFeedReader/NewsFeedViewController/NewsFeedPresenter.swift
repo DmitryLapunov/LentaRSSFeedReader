@@ -31,6 +31,9 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
         repository.parseFeed(url: URL(string: Contents.Networking.lentaRSSFeedURL) ?? URL(fileURLWithPath: "")) { result in
             switch result {
             case .success(let news):
+                DispatchQueue.main.async {
+                    self.view?.stopRefreshing()
+                }
                 self.view?.presentNewsData(news: news)
             case .failure(let error):
                 print(error.localizedDescription)
