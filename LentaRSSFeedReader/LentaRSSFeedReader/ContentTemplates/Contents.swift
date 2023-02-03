@@ -25,6 +25,6 @@ enum Contents {
     }
     
     enum Basic {
-        static let paragraphSeparator = "\n\n"
+        static let paragraphSeparator = "\n"
     }
 }

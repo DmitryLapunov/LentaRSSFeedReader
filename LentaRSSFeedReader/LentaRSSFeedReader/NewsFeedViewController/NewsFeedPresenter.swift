@@ -19,16 +19,14 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
     
     weak var view: NewsFeedViewProtocol?
     private let repository: NewsFeedRepositoryProtocol
-    private let alertManager: AlertManager
+    private let alertManager = AlertManager()
     
     // MARK: - Init methods
     
     init(view: NewsFeedViewProtocol,
-         repository: NewsFeedRepositoryProtocol = NewsFeedRepository(),
-         alertManager: AlertManager) {
+         repository: NewsFeedRepositoryProtocol = NewsFeedRepository()) {
         self.view = view
         self.repository = repository
-        self.alertManager = alertManager
     }
     
     // MARK: - Presenter data-handling methods

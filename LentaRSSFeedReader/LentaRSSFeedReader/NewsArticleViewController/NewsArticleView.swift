@@ -41,28 +41,8 @@ class NewsArticleView: UIView {
         return imageView
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.NewsArticle.newsTitle
-        label.textColor = Colors.darkGray
-        label.numberOfLines = Constants.Label.infiniteLines
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.NewsArticle.newsDate
-        label.textColor = Colors.lightGray
-        label.numberOfLines = Constants.Label.singleLine
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var articleLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.NewsArticle.newsArticle
-        label.textColor = Colors.darkGray
         label.numberOfLines = Constants.Label.infiniteLines
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -88,8 +68,6 @@ class NewsArticleView: UIView {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(contentView)
         contentView.addSubview(newsImageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(dateLabel)
         contentView.addSubview(articleLabel)
     }
     
@@ -111,21 +89,7 @@ class NewsArticleView: UIView {
         newsImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
                                            constant: Constants.Constraints.basicPositive).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: newsImageView.bottomAnchor,
-                                        constant: Constants.Constraints.halfPositive).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                            constant: Constants.Constraints.basicPositive).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                             constant: Constants.Constraints.basicNegative).isActive = true
-        
-        dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                       constant: Constants.Constraints.halfPositive).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                           constant: Constants.Constraints.basicPositive).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                            constant: Constants.Constraints.basicNegative).isActive = true
-        
-        articleLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor,
+        articleLabel.topAnchor.constraint(equalTo: newsImageView.bottomAnchor,
                                           constant: Constants.Constraints.halfPositive).isActive = true
         articleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                               constant: Constants.Constraints.basicPositive).isActive = true
@@ -138,9 +102,46 @@ class NewsArticleView: UIView {
     func setupView(articleStructure: NewsArticleStructure) {
         newsImageView.kf.setImage(with: URL(string: articleStructure.imageLink),
                                   placeholder: Images.System.placeholder)
-        titleLabel.text = articleStructure.title
-        dateLabel.text = CustomDateFormatter.formatDate(unformattedDate: articleStructure.date)
-        let articleText = articleStructure.articleParagraphs.joined(separator: Contents.Basic.paragraphSeparator)
-        articleLabel.text = articleText
+        articleLabel.attributedText = setupAttributedArticle(articleStructure: articleStructure)
+    }
+    
+    private func setupAttributedArticle(articleStructure: NewsArticleStructure) -> NSAttributedString {
+        let article = NSMutableAttributedString()
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.paragraphSpacing = 8
+        
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: Fonts.NewsArticle.newsTitle as Any,
+            .foregroundColor: Colors.darkGray,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let dateAttributes: [NSAttributedString.Key: Any] = [
+            .font: Fonts.NewsArticle.newsDate as Any,
+            .foregroundColor: Colors.lightGray,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let articleAttributes: [NSAttributedString.Key: Any] = [
+            .font: Fonts.NewsArticle.newsArticle as Any,
+            .foregroundColor: Colors.darkGray,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let attributedTitle = NSAttributedString(string: articleStructure.title,
+                                                 attributes: titleAttributes)
+        let attributedDate = NSAttributedString(string: Contents.Basic.paragraphSeparator + CustomDateFormatter.formatDate(unformattedDate: articleStructure.date),
+                                                attributes: dateAttributes)
+        let articleText = articleStructure.articleParagraphs
+            .joined(separator: Contents.Basic.paragraphSeparator)
+        let attributedArticle = NSAttributedString(string: Contents.Basic.paragraphSeparator + articleText,
+                                                   attributes: articleAttributes)
+        
+        article.append(attributedTitle)
+        article.append(attributedDate)
+        article.append(attributedArticle)
+        
+        return article
     }
 }
