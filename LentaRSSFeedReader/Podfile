@@ -8,5 +8,6 @@ target 'LentaRSSFeedReader' do
   # Pods for LentaRSSFeedReader
 
   pod 'Kingfisher'
+  pod 'SwiftSoup'
 
 end
