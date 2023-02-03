@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarFormatter.configureNavBar()
         let builder = NewsFeedBuilder()
         let newsFeedController = builder.build()
-        window?.rootViewController = UINavigationController(rootViewController: newsFeedController)
+        let navigationController = UINavigationController(rootViewController: newsFeedController)
+        navigationController.navigationBar.topItem?.backButtonTitle = ""
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true
