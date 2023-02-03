@@ -41,6 +41,7 @@
 		89652000298D2679006F3CB7 /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FFF298D2679006F3CB7 /* NewsArticleView.swift */; };
 		89652002298D2685006F3CB7 /* NewsArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89652001298D2685006F3CB7 /* NewsArticlePresenter.swift */; };
 		89652004298D268E006F3CB7 /* NewsArticleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89652003298D268E006F3CB7 /* NewsArticleBuilder.swift */; };
+		89652006298D36DF006F3CB7 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89652005298D36DF006F3CB7 /* AlertManager.swift */; };
 		DD4FC718A3DC659489EF069E /* Pods_LentaRSSFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		89651FFF298D2679006F3CB7 /* NewsArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleView.swift; sourceTree = "<group>"; };
 		89652001298D2685006F3CB7 /* NewsArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlePresenter.swift; sourceTree = "<group>"; };
 		89652003298D268E006F3CB7 /* NewsArticleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleBuilder.swift; sourceTree = "<group>"; };
+		89652005298D36DF006F3CB7 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LentaRSSFeedReader.release.xcconfig"; path = "Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 				89651FDE298C2565006F3CB7 /* CustomError.swift */,
 				89651FE0298C3886006F3CB7 /* CustomDateFormatter.swift */,
 				89651FE2298C6949006F3CB7 /* NavBarFormatter.swift */,
+				89652005298D36DF006F3CB7 /* AlertManager.swift */,
 			);
 			path = CustomTools;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				89651FDA298C1F25006F3CB7 /* NewsFeedBuilder.swift in Sources */,
 				89652004298D268E006F3CB7 /* NewsArticleBuilder.swift in Sources */,
+				89652006298D36DF006F3CB7 /* AlertManager.swift in Sources */,
 				89651FF2298C6F40006F3CB7 /* Colors.swift in Sources */,
 				89651FCD298B3C24006F3CB7 /* NewsCellStructure.swift in Sources */,
 				89651FC72989A68C006F3CB7 /* CustomRSSParser.swift in Sources */,

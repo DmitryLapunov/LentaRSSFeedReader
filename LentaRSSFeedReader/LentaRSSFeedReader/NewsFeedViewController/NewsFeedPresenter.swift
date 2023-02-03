@@ -19,12 +19,16 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
     
     weak var view: NewsFeedViewProtocol?
     private let repository: NewsFeedRepositoryProtocol
+    private let alertManager: AlertManager
     
     // MARK: - Init methods
     
-    init(view: NewsFeedViewProtocol, repository: NewsFeedRepositoryProtocol = NewsFeedRepository()) {
+    init(view: NewsFeedViewProtocol,
+         repository: NewsFeedRepositoryProtocol = NewsFeedRepository(),
+         alertManager: AlertManager) {
         self.view = view
         self.repository = repository
+        self.alertManager = alertManager
     }
     
     // MARK: - Presenter data-handling methods
@@ -38,7 +42,7 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
                 }
                 self.view?.presentNewsData(news: news)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.alertManager.createAlert(message: error.localizedDescription)
             }
         }
     }
@@ -50,7 +54,7 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
             case .success(let articleStructure):
                 self.view?.presentArticleData(articleStructure: articleStructure)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.alertManager.createAlert(message: error.localizedDescription)
             }
         }
     }
