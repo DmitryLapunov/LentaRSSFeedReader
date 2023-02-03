@@ -9,6 +9,8 @@ import Foundation
 
 protocol NewsFeedPresenterProtocol: AnyObject {
     func loadNewsData()
+    func loadArticleData(newsCellStructure: NewsCellStructure)
+    func toggleTableViewInteraction(isEnabled: Bool)
 }
 
 final class NewsFeedPresenter: NewsFeedPresenterProtocol {
@@ -39,5 +41,21 @@ final class NewsFeedPresenter: NewsFeedPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func loadArticleData(newsCellStructure: NewsCellStructure) {
+        repository.scrapeHtml(newsCellStructure: newsCellStructure) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let articleStructure):
+                self.view?.presentArticleData(articleStructure: articleStructure)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func toggleTableViewInteraction(isEnabled: Bool) {
+        view?.handleTableViewInteraction(isEnabled: isEnabled)
     }
 }

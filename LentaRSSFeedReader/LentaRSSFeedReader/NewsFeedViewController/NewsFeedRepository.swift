@@ -8,16 +8,21 @@
 import Foundation
 
 typealias NewsListHandler = (Result<[NewsCellStructure], Error>) -> Void
+typealias NewsArticleHandler = (Result<NewsArticleStructure, Error>) -> Void
 
 protocol NewsFeedRepositoryProtocol: AnyObject {
     func parseFeed(url: URL, completion: @escaping NewsListHandler)
+    func scrapeHtml(newsCellStructure: NewsCellStructure, completion: @escaping NewsArticleHandler)
 }
 
 final class NewsFeedRepository: NewsFeedRepositoryProtocol {
     private let parser: CustomRSSParserProtocol
+    private let scraper: CustomHtmlScraperProtocol
     
-    init(parser: CustomRSSParserProtocol = CustomRSSParser()) {
+    init(parser: CustomRSSParserProtocol = CustomRSSParser(),
+         scraper: CustomHtmlScraperProtocol = CustomHtmlScraper()) {
         self.parser = parser
+        self.scraper = scraper
     }
     
     func parseFeed(url: URL, completion: @escaping NewsListHandler) {
@@ -31,6 +36,24 @@ final class NewsFeedRepository: NewsFeedRepositoryProtocol {
                                                                 imageLink: $0[3],
                                                                 isRead: false) })
                 completion(.success(news))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func scrapeHtml(newsCellStructure: NewsCellStructure, completion: @escaping NewsArticleHandler) {
+        scraper.startHtmlScraping(url: URL(string: newsCellStructure.link) ?? URL(fileURLWithPath: ""),
+                                  htmlTag: Contents.Networking.htmlTag,
+                                  tagAttribute: Contents.Networking.tagAttribute,
+                                  attributeValue: Contents.Networking.attributeValue) { result in
+            switch result {
+            case .success(let articleParagraphs):
+                let articleStructure = NewsArticleStructure(title: newsCellStructure.title,
+                                                            date: newsCellStructure.date,
+                                                            imageLink: newsCellStructure.imageLink,
+                                                            articleParagraphs: articleParagraphs)
+                completion(.success(articleStructure))
             case .failure(let error):
                 completion(.failure(error))
             }

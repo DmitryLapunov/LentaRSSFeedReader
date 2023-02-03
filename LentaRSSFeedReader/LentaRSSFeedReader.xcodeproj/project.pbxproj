@@ -34,6 +34,8 @@
 		89651FF2298C6F40006F3CB7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF1298C6F40006F3CB7 /* Colors.swift */; };
 		89651FF4298C700B006F3CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF3298C700B006F3CB7 /* Constants.swift */; };
 		89651FF6298C9931006F3CB7 /* NewsFeedViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF5298C9931006F3CB7 /* NewsFeedViewDelegate.swift */; };
+		89651FF8298D1255006F3CB7 /* CustomHtmlScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF7298D1255006F3CB7 /* CustomHtmlScraper.swift */; };
+		89651FFA298D158E006F3CB7 /* NewsArticleStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651FF9298D158E006F3CB7 /* NewsArticleStructure.swift */; };
 		DD4FC718A3DC659489EF069E /* Pods_LentaRSSFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB58CA10A12FDCAAAFB65D /* Pods_LentaRSSFeedReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		89651FF1298C6F40006F3CB7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		89651FF3298C700B006F3CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89651FF5298C9931006F3CB7 /* NewsFeedViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewDelegate.swift; sourceTree = "<group>"; };
+		89651FF7298D1255006F3CB7 /* CustomHtmlScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHtmlScraper.swift; sourceTree = "<group>"; };
+		89651FF9298D158E006F3CB7 /* NewsArticleStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleStructure.swift; sourceTree = "<group>"; };
 		8DECE9873AE680E7E069CD0C /* Pods-LentaRSSFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LentaRSSFeedReader.release.xcconfig"; path = "Target Support Files/Pods-LentaRSSFeedReader/Pods-LentaRSSFeedReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,7 @@
 		89651FC22989A612006F3CB7 /* NewsArticleViewController */ = {
 			isa = PBXGroup;
 			children = (
+				89651FF9298D158E006F3CB7 /* NewsArticleStructure.swift */,
 			);
 			path = NewsArticleViewController;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				89651FC62989A68C006F3CB7 /* CustomRSSParser.swift */,
+				89651FF7298D1255006F3CB7 /* CustomHtmlScraper.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 				89651FDF298C2565006F3CB7 /* CustomError.swift in Sources */,
 				89651FE6298C6AA4006F3CB7 /* LatoFont.swift in Sources */,
 				89651FDC298C20F1006F3CB7 /* NewsFeedRepository.swift in Sources */,
+				89651FFA298D158E006F3CB7 /* NewsArticleStructure.swift in Sources */,
 				89651FE1298C3886006F3CB7 /* CustomDateFormatter.swift in Sources */,
 				89651FCB2989A753006F3CB7 /* Contents.swift in Sources */,
+				89651FF8298D1255006F3CB7 /* CustomHtmlScraper.swift in Sources */,
 				89651FD4298B3F78006F3CB7 /* NewsFeedViewController+TableView.swift in Sources */,
 				89651FAB29899484006F3CB7 /* AppDelegate.swift in Sources */,
 				89651FF4298C700B006F3CB7 /* Constants.swift in Sources */,

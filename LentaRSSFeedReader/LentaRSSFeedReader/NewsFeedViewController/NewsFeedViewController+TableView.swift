@@ -22,7 +22,9 @@ extension NewsFeedViewController: UITableViewDataSource {
 
 extension NewsFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.toggleTableViewInteraction(isEnabled: false)
         arrayOfNews[indexPath.row].isRead = true
         tableView.reloadRows(at: [indexPath], with: .none)
+        presenter?.loadArticleData(newsCellStructure: arrayOfNews[indexPath.row])
     }
 }

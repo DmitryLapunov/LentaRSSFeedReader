@@ -10,6 +10,8 @@ import Foundation
 protocol NewsFeedViewProtocol: AnyObject {
     func presentNewsData(news: [NewsCellStructure])
     func stopRefreshing()
+    func presentArticleData(articleStructure: NewsArticleStructure)
+    func handleTableViewInteraction(isEnabled: Bool)
 }
 
 extension NewsFeedViewController: NewsFeedViewProtocol {
@@ -33,5 +35,12 @@ extension NewsFeedViewController: NewsFeedViewProtocol {
     
     func stopRefreshing() {
         controllerView.stopRefreshing()
+    }
+    
+    func presentArticleData(articleStructure: NewsArticleStructure) {
+    }
+    
+    func handleTableViewInteraction(isEnabled: Bool) {
+        controllerView.tableView.isUserInteractionEnabled = isEnabled
     }
 }

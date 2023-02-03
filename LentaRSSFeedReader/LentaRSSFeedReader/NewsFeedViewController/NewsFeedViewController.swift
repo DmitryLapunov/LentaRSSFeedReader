@@ -28,6 +28,11 @@ final class NewsFeedViewController: UIViewController {
         presenter?.loadNewsData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.toggleTableViewInteraction(isEnabled: true)
+    }
+    
     // MARK: - Init methods
     
     init() {

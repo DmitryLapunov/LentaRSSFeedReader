@@ -18,5 +18,9 @@ enum Contents {
         static let elementEnclosure = "enclosure"
         static let inlineKeyUrl = "url"
         static let parsingError = "Не удалось получить доступ к ленте RSS."
+        static let scrapingError = "Ошибка получения данных новости."
+        static let htmlTag = "p"
+        static let tagAttribute = "class"
+        static let attributeValue = "topic-body__content-text"
     }
 }
