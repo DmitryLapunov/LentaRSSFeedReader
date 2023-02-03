@@ -127,8 +127,7 @@
 				89651FC82989A6E9006F3CB7 /* ContentTemplates */,
 				89651FC92989A6F0006F3CB7 /* CoreData */,
 				89651FC52989A67E006F3CB7 /* NetworkTools */,
-				89651FC12989A604006F3CB7 /* NewsFeedViewController */,
-				89651FC22989A612006F3CB7 /* NewsArticleViewController */,
+				89652009298D4321006F3CB7 /* NewsScreen */,
 				89651FAA29899484006F3CB7 /* AppDelegate.swift */,
 				89651FB629899486006F3CB7 /* Assets.xcassets */,
 				89651FB829899486006F3CB7 /* LaunchScreen.storyboard */,
@@ -226,6 +225,15 @@
 				89651FE5298C6AA4006F3CB7 /* LatoFont.swift */,
 			);
 			path = LatoFont;
+			sourceTree = "<group>";
+		};
+		89652009298D4321006F3CB7 /* NewsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				89651FC12989A604006F3CB7 /* NewsFeedViewController */,
+				89651FC22989A612006F3CB7 /* NewsArticleViewController */,
+			);
+			path = NewsScreen;
 			sourceTree = "<group>";
 		};
 		A5B6C9E824BCB9603ABF4AE1 /* Frameworks */ = {
